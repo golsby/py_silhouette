@@ -30,6 +30,8 @@ USB_ENDPOINT_CMD_RECV = 0x82
 
 def clamp(value, low, high):
     """Clamp value to be at least low and at most high."""
+    if value > high:
+        b = 0
     return min(max(value, low), high)
 
 
@@ -162,6 +164,34 @@ class DeviceParameters(object):
     possible for this device.
     """
 
+    tool_count = attrib(default=1)
+    """
+    Number of tools supported by the Silhouette device.
+    """
+
+@attrs(frozen=True)
+class CuttingMatParameters(object):
+    name = attrib()
+    """Human readable name for this cutting mat"""
+
+    area_width_min = attrib()
+    """Minimum width for valid plot area (mm)"""
+
+    area_width_max = attrib()
+    """Maximum width for valid plot area (mm)"""
+
+    area_height_min = attrib()
+    """Minimum height for valid plot area (mm)"""
+
+    area_height_max = attrib()
+    """Maximum hiehgt for valid plot area (mm)"""
+
+    area_width_offset = attrib(default=0)
+    """Horizontal (x) offset from machine origin to left edge of cutting mat."""
+
+    area_height_offset = attrib(default=0)
+    """Veritcal (y) offset from the machine origin to top edge of cutting mat."""
+
 
 """
 The parameters for the supported devices.
@@ -177,6 +207,7 @@ SUPPORTED_DEVICE_PARAMETERS = [
         area_height_max=inch2mm(40.0),
         tool_depth_min=None,
         tool_depth_max=None,
+        tool_count=1,
     ),
     # Warning: values for entries below taken from
     # https://github.com/fablabnbg/inkscape-silhouette and have not been
@@ -191,6 +222,7 @@ SUPPORTED_DEVICE_PARAMETERS = [
         area_height_max=inch2mm(40.0),
         tool_depth_min=0,
         tool_depth_max=10,
+        tool_count=1,
     ),
     DeviceParameters(
         "Silhouette Cameo",
@@ -202,6 +234,7 @@ SUPPORTED_DEVICE_PARAMETERS = [
         area_height_max=inch2mm(40.0),
         tool_depth_min=None,
         tool_depth_max=None,
+        tool_count=1,
     ),
     DeviceParameters(
         "Silhouette Cameo2",
@@ -213,17 +246,19 @@ SUPPORTED_DEVICE_PARAMETERS = [
         area_height_max=inch2mm(40.0),
         tool_depth_min=None,
         tool_depth_max=None,
+        tool_count=1,
     ),
     DeviceParameters(
         "Silhouette Cameo3",
         usb_vendor_id=0x0B4D,
         usb_product_id=0x112F,
         area_width_min=inch2mm(3.0),
-        area_width_max=inch2mm(12.0),
+        area_width_max=inch2mm(12.0)+5,
         area_height_min=inch2mm(3.0),
         area_height_max=inch2mm(40.0),
         tool_depth_min=0,
         tool_depth_max=10,
+        tool_count=2,
     ),
     # Contributed by Yohalmo Garcia (@yohalmogarcia on GitHub, see issue #3)
     DeviceParameters(
@@ -236,7 +271,38 @@ SUPPORTED_DEVICE_PARAMETERS = [
         area_height_max=inch2mm(40.0),
         tool_depth_min=0,
         tool_depth_max=10,
+        tool_count=2,
     ),
+]
+
+SUPPORTED_CUTTING_MAT_PARAMETERS = [
+    CuttingMatParameters(
+        name="None",
+        area_width_min=inch2mm(0),
+        area_width_max=inch2mm(0),
+        area_height_min=inch2mm(0),
+        area_height_max=inch2mm(0),
+        area_width_offset=0,
+        area_height_offset=0
+    ),
+    CuttingMatParameters(
+        name="Cameo 12x12",
+        area_width_min=inch2mm(0),
+        area_width_max=inch2mm(13),
+        area_height_min=inch2mm(0),
+        area_height_max=inch2mm(12),
+        area_width_offset=5,
+        area_height_offset=15
+    ),
+    CuttingMatParameters(
+        name="Cameo 12x24",
+        area_width_min=inch2mm(0),
+        area_width_max=inch2mm(12),
+        area_height_min=inch2mm(0),
+        area_height_max=inch2mm(24),
+        area_width_offset=5,
+        area_height_offset=15
+    )
 ]
 
 
@@ -277,7 +343,7 @@ class SilhouetteDevice(object):
     size of media and tools supported by this device.
     """
     
-    def __init__(self, device=None, device_params=None):
+    def __init__(self, device=None, device_params=None, cutting_mat_params=None):
         """
         Connect to and control the specified plotter/cutter.
         
@@ -303,6 +369,7 @@ class SilhouetteDevice(object):
                 raise NoDeviceFoundError()
         
         self.params = device_params
+        self.cutting_mat = cutting_mat_params or SUPPORTED_CUTTING_MAT_PARAMETERS[0]
         
         # A buffer into which commands waiting to be sent will be written until
         # flush() is called.
@@ -402,8 +469,41 @@ class SilhouetteDevice(object):
         Call :py:meth:`flush` to ensure this command has arrived at the device.
         """
         self._send(b"H\x03")
-    
-    
+
+    def select_tool(self, tool_id):
+        """
+        Tell the plotter to use tool at id tool_id. Some plotters have a carriage
+        that holds multiple tools.
+
+        Parameters
+        ----------
+        tool_id: int
+            
+        """
+        self._send(b"%s%d\x03"%(
+            b"J",
+            clamp(tool_id, 1, self.params.tool_count),
+        ))
+
+    def set_media(self, x, y):
+        self._send(b'FW%d,%d'%(
+            x, y
+        ))
+
+
+    def set_origin(self, x, y):
+        self._send(b'^%d,%d'%(
+            x, y
+        ))
+
+    def relative_move_to(self, x, y, use_tool):
+        self._send(b"%s%d,%d\x03"%(
+            b"E" if use_tool else b"O",
+            mm2mu(clamp(y, 0, self.params.area_height_max)),
+            mm2mu(clamp(x, 0, self.params.area_width_max)),
+        ))
+
+
     def move_to(self, x, y, use_tool):
         """
         Move the plotter, optionally with the tool engaged.
@@ -444,8 +544,20 @@ class SilhouetteDevice(object):
             mm2mu(clamp(y, 0, self.params.area_height_max)),
             mm2mu(clamp(x, 0, self.params.area_width_max)),
         ))
+
+    def draw_bezier(self, points):
+        self._send(b"BZ0,%d,%d,%d,%d,%d,%d,%d,%d,0"%(
+            mm2mu(clamp(points[0][1], 0, self.params.area_height_max)),
+            mm2mu(clamp(points[0][0], 0, self.params.area_width_max)),
+            mm2mu(clamp(points[1][1], 0, self.params.area_height_max)),
+            mm2mu(clamp(points[1][0], 0, self.params.area_width_max)),
+            mm2mu(clamp(points[2][1], 0, self.params.area_height_max)),
+            mm2mu(clamp(points[2][0], 0, self.params.area_width_max)),
+            mm2mu(clamp(points[3][1], 0, self.params.area_height_max)),
+            mm2mu(clamp(points[3][0], 0, self.params.area_width_max)),
+        ))
     
-    def set_tool_diameter(self, diameter):
+    def set_tool_diameter(self, diameter, tool_index=1):
         r"""
         Inform the plotter of the diameter of a swivelling tool's working
         point to allow it to adjust tool paths accordingly.
@@ -491,11 +603,11 @@ class SilhouetteDevice(object):
             :py:attr:`.tool_diameter_max
             <DeviceParameters.tool_diameter_max>`.
         """
-        self._send(b"FC%d\x03"%(mm2mu(clamp(
+        self._send(b"FC%d,0,%d\x03"%(mm2mu(clamp(
             diameter,
             self.params.tool_diameter_min,
             self.params.tool_diameter_max,
-        ))))
+        )), tool_index))
     
     def set_force(self, force):
         """
@@ -514,7 +626,7 @@ class SilhouetteDevice(object):
             self.params.tool_force_max,
         )))
     
-    def set_speed(self, speed):
+    def set_speed(self, speed, tool_index=1):
         """
         Set the movement speed of the device in mm/sec.
         
@@ -524,11 +636,14 @@ class SilhouetteDevice(object):
         :py:class:`SilhouetteDevice.params`\ :py:attr:`.tool_speed_max
         <DeviceParameters.tool_speed_max>`.
         """
-        self._send(b"!%d,0\x03"%mmsec2mu(clamp(
-            speed,
-            self.params.tool_speed_min,
-            self.params.tool_speed_max,
-        )))
+        self._send(b"!%d,%d\x03"%(mmsec2mu(
+            clamp(
+                speed,
+                self.params.tool_speed_min,
+                self.params.tool_speed_max,
+            )),
+            tool_index)
+        )
     
     def set_depth(self, depth):
         """

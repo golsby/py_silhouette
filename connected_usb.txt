@@ -1,0 +1,221 @@
++-o XHC2@00000000  <class AppleUSBXHCITR, id 0x10000041f, registered, matched, active, busy 0 (0 ms), retain 35>
+  | {
+  |   "IOClass" = "AppleUSBXHCITR"
+  |   "UsbCompanionHS" = ("XHC1")
+  |   "UsbCompanionFS" = ("XHC1")
+  |   "kUSBSleepPortCurrentLimit" = 3000
+  |   "IOPersonalityPublisher" = "com.apple.driver.usb.AppleUSBXHCIPCI"
+  |   "IOPowerManagement" = {"ChildrenPowerState"=2,"DevicePowerState"=0,"CurrentPowerState"=2,"CapabilityFlags"=65536,"MaxPowerState"=3,"DriverPowerState"=0}
+  |   "IOProviderClass" = "IOPCIDevice"
+  |   "IOProbeScore" = 5000
+  |   "locationID" = 0
+  |   "name" = <"XHC2">
+  |   "device-properties" = {"acpi-device"="IOACPIPlatformDevice is not serializable","USBBusNumber"=0,"acpi-path"="IOACPIPlane:/_SB/PCI0@0/PEG1@10001/UPSB@0/DSB2@20000/XHC2@0"}
+  |   "kUSBWakePortCurrentLimit" = 3000
+  |   "CFBundleIdentifierKernel" = "com.apple.driver.usb.AppleUSBXHCIPCI"
+  |   "IOPCIPrimaryMatch" = "0x15e98086 0x15ec8086 0x15f08086 0x0b278086"
+  |   "IOMatchCategory" = "IODefaultMatchCategory"
+  |   "CFBundleIdentifier" = "com.apple.driver.usb.AppleUSBXHCIPCI"
+  |   "UsbHostControllerDisableWakeSources" = Yes
+  |   "Revision" = <0103>
+  |   "IOPCITunnelCompatible" = Yes
+  |   "controller-statistics" = {"kControllerStatIOCount"=0,"kControllerStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="401ms (0%)","kPowerStateSuspended"="550918ms (99%)"},"kControllerStatSpuriousInterruptCount"=0}
+  |   "UsbCompanionLS" = ("XHC1")
+  |   "kUSBSleepSupported" = Yes
+  | }
+  | 
+  +-o SSP1@00100000  <class AppleUSB30XHCITypeCPort, id 0x1000004ae, registered, matched, active, busy 0 (0 ms), retain 14>
+  +-o SSP2@00200000  <class AppleUSB30XHCITypeCPort, id 0x1000004b2, registered, matched, active, busy 0 (0 ms), retain 14>
+
++-o XHC3@01000000  <class AppleUSBXHCITR, id 0x10000041d, registered, matched, active, busy 0 (0 ms), retain 35>
+  | {
+  |   "IOClass" = "AppleUSBXHCITR"
+  |   "UsbCompanionHS" = ("XHC1")
+  |   "UsbCompanionFS" = ("XHC1")
+  |   "kUSBSleepPortCurrentLimit" = 3000
+  |   "IOPersonalityPublisher" = "com.apple.driver.usb.AppleUSBXHCIPCI"
+  |   "IOPowerManagement" = {"ChildrenPowerState"=0,"DevicePowerState"=0,"CurrentPowerState"=0,"CapabilityFlags"=0,"MaxPowerState"=3,"DriverPowerState"=0}
+  |   "IOProviderClass" = "IOPCIDevice"
+  |   "IOProbeScore" = 5000
+  |   "locationID" = 16777216
+  |   "name" = <"XHC3">
+  |   "device-properties" = {"acpi-device"="IOACPIPlatformDevice is not serializable","USBBusNumber"=1,"acpi-path"="IOACPIPlane:/_SB/PCI0@0/PEG2@10002/UPSB@0/DSB2@20000/XHC3@0"}
+  |   "kUSBWakePortCurrentLimit" = 3000
+  |   "CFBundleIdentifierKernel" = "com.apple.driver.usb.AppleUSBXHCIPCI"
+  |   "IOPCIPrimaryMatch" = "0x15e98086 0x15ec8086 0x15f08086 0x0b278086"
+  |   "IOMatchCategory" = "IODefaultMatchCategory"
+  |   "CFBundleIdentifier" = "com.apple.driver.usb.AppleUSBXHCIPCI"
+  |   "UsbHostControllerDisableWakeSources" = Yes
+  |   "Revision" = <0103>
+  |   "IOPCITunnelCompatible" = Yes
+  |   "controller-statistics" = {"kControllerStatIOCount"=0,"kControllerStatPowerStateTime"={"kPowerStateOff"="551072ms (99%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="6ms (0%)","kPowerStateSuspended"="241ms (0%)"},"kControllerStatSpuriousInterruptCount"=0}
+  |   "UsbCompanionLS" = ("XHC1")
+  |   "kUSBSleepSupported" = Yes
+  | }
+  | 
+  +-o SSP1@01100000  <class AppleUSB30XHCITypeCPort, id 0x1000004b8, registered, matched, active, busy 0 (0 ms), retain 14>
+  +-o SSP2@01200000  <class AppleUSB30XHCITypeCPort, id 0x1000004b9, registered, matched, active, busy 0 (0 ms), retain 14>
+
++-o XHC1@14000000  <class AppleIntelCNLUSBXHCI, id 0x1000003ea, registered, matched, active, busy 0 (472 ms), retain 58>
+  | {
+  |   "IOClass" = "AppleIntelCNLUSBXHCI"
+  |   "kUSBSleepPortCurrentLimit" = 3000
+  |   "IOPersonalityPublisher" = "com.apple.driver.usb.AppleUSBXHCIPCI"
+  |   "IOPowerManagement" = {"ChildrenPowerState"=3,"DevicePowerState"=2,"CurrentPowerState"=3,"CapabilityFlags"=32768,"MaxPowerState"=3,"DriverPowerState"=0}
+  |   "IOProviderClass" = "IOPCIDevice"
+  |   "IOProbeScore" = 5000
+  |   "UsbRTD3Supported" = Yes
+  |   "locationID" = 335544320
+  |   "name" = <"XHC1">
+  |   "device-properties" = {"acpi-device"="IOACPIPlatformDevice is not serializable","acpi-path"="IOACPIPlane:/_SB/PCI0@0/XHC1@140000"}
+  |   "kUSBWakePortCurrentLimit" = 3000
+  |   "UsbCompanionSSP" = ("XHC2","XHC3")
+  |   "CFBundleIdentifierKernel" = "com.apple.driver.usb.AppleUSBXHCIPCI"
+  |   "IOPCIPrimaryMatch" = "0x9ded8086 0xa36d8086 0x06ed8086"
+  |   "IOMatchCategory" = "IODefaultMatchCategory"
+  |   "CFBundleIdentifier" = "com.apple.driver.usb.AppleUSBXHCIPCI"
+  |   "Revision" = <0103>
+  |   "UsbCompanionSS" = ("XHC2","XHC3")
+  |   "IOGeneralInterest" = "IOCommand is not serializable"
+  |   "IOPCITunnelCompatible" = Yes
+  |   "controller-statistics" = {"kControllerStatIOCount"=48,"kControllerStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="1374ms (0%)","kPowerStateOn"="549601ms (99%)","kPowerStateSuspended"="341ms (0%)"},"kControllerStatSpuriousInterruptCount"=0}
+  |   "kUSBSleepSupported" = Yes
+  | }
+  | 
+  +-o HS01@14100000  <class AppleUSB20XHCITypeCPort, id 0x1000004ad, registered, matched, active, busy 0 (0 ms), retain 10>
+  +-o HS02@14200000  <class AppleUSB20XHCITypeCPort, id 0x1000004b0, registered, matched, active, busy 0 (0 ms), retain 10>
+  +-o HS03@14300000  <class AppleUSB20XHCITypeCPort, id 0x1000004b3, registered, matched, active, busy 0 (0 ms), retain 10>
+  +-o HS04@14400000  <class AppleUSB20XHCITypeCPort, id 0x1000004b4, registered, matched, active, busy 0 (472 ms), retain 18>
+    +-o IOUSBHostDevice@14400000  <class IOUSBHostDevice, id 0x100000a60, registered, matched, active, busy 0 (66 ms), retain 30>
+      +-o AppleUSBHostLegacyClient  <class AppleUSBHostLegacyClient, id 0x100000a63, !registered, !matched, active, busy 0, retain 8>
+      +-o Google Chrome  <class AppleUSBHostDeviceUserClient, id 0x100000a67, !registered, !matched, active, busy 0, retain 7>
+      +-o AppleUSBHostCompositeDevice  <class AppleUSBHostCompositeDevice, id 0x100000a6c, !registered, !matched, active, busy 0, retain 4>
+      +-o IOUSBHostInterface@0  <class IOUSBHostInterface, id 0x100000a6e, registered, matched, active, busy 0 (3 ms), retain 12>
+
++-o AppleUSBVHCIBCE@80000000  <class AppleUSBVHCIBCE, id 0x100000439, registered, matched, active, busy 0 (1159 ms), retain 156>
+  | {
+  |   "IOClass" = "AppleUSBVHCIBCE"
+  |   "CFBundleIdentifier" = "com.apple.driver.usb.AppleUSBVHCIBCE"
+  |   "IOProviderClass" = "IOBufferCopyEngine"
+  |   "kUSBSleepSupported" = Yes
+  |   "IOPowerManagement" = {"ChildrenPowerState"=3,"DevicePowerState"=2,"CurrentPowerState"=3,"CapabilityFlags"=32768,"MaxPowerState"=3,"DriverPowerState"=0}
+  |   "IOProbeScore" = 0
+  |   "IOGeneralInterest" = "IOCommand is not serializable"
+  |   "locationID" = 18446744071562067968
+  |   "IOMatchCategory" = "AppleUSBVHCI"
+  |   "controller-statistics" = {"kControllerStatIOCount"=38869,"kControllerStatPowerStateTime"={"kPowerStateOff"="0ms (0%)","kPowerStateSleep"="0ms (0%)","kPowerStateOn"="551280ms (99%)","kPowerStateSuspended"="41ms (0%)"},"kControllerStatSpuriousInterruptCount"=75}
+  |   "IOPersonalityPublisher" = "com.apple.driver.usb.AppleUSBVHCIBCE"
+  |   "CFBundleIdentifierKernel" = "com.apple.driver.usb.AppleUSBVHCIBCE"
+  | }
+  | 
+  +-o AppleUSBVHCIPort@80100000  <class AppleUSBVHCIPort, id 0x1000004ca, registered, matched, active, busy 0 (336 ms), retain 13>
+  | +-o Apple T2 Controller@80100000  <class IOUSBHostDevice, id 0x1000004fb, registered, matched, active, busy 0 (335 ms), retain 33>
+  |   +-o AppleUSBHostLegacyClient  <class AppleUSBHostLegacyClient, id 0x100000542, !registered, !matched, active, busy 0, retain 8>
+  |   +-o AppleUSBCDCCompositeDevice  <class AppleUSBCDCCompositeDevice, id 0x10000054a, !registered, !matched, active, busy 0, retain 4>
+  |   +-o NCM Control@0  <class IOUSBHostInterface, id 0x10000054e, registered, matched, active, busy 0 (42 ms), retain 11>
+  |   | +-o AppleUSBNCMControl  <class AppleUSBNCMControl, id 0x10000055f, registered, matched, active, busy 0 (0 ms), retain 7>
+  |   +-o NCM Data@1  <class IOUSBHostInterface, id 0x100000551, registered, matched, active, busy 0 (243 ms), retain 12>
+  |     +-o AppleUSBNCMData  <class AppleUSBNCMData, id 0x100000560, registered, matched, active, busy 0 (0 ms), retain 13>
+  |       +-o en5  <class IOEthernetInterface, id 0x10000057f, registered, matched, active, busy 0 (0 ms), retain 11>
+  |         +-o IONetworkStack  <class IONetworkStack, id 0x100000489, registered, matched, active, busy 0 (0 ms), retain 18>
+  |           +-o IONetworkStackUserClient  <class IONetworkStackUserClient, id 0x10000059f, !registered, !matched, active, busy 0, retain 5>
+  +-o AppleUSBVHCIPort@80200000  <class AppleUSBVHCIPort, id 0x1000004cb, registered, matched, active, busy 0 (147 ms), retain 13>
+  | +-o FaceTime HD Camera (Built-in)@80200000  <class IOUSBHostDevice, id 0x1000004fd, registered, matched, active, busy 0 (147 ms), retain 33>
+  |   +-o AppleUSBHostLegacyClient  <class AppleUSBHostLegacyClient, id 0x100000522, !registered, !matched, active, busy 0, retain 8>
+  |   +-o AppleUSBHostCompositeDevice  <class AppleUSBHostCompositeDevice, id 0x10000052f, !registered, !matched, active, busy 0, retain 4>
+  |   +-o IOUSBHostInterface@0  <class IOUSBHostInterface, id 0x100000533, registered, matched, active, busy 0 (3 ms), retain 9>
+  |   | +-o VDCAssistant  <class AppleUSBHostInterfaceUserClient, id 0x100000837, !registered, !matched, active, busy 0, retain 6>
+  |   +-o IOUSBHostInterface@1  <class IOUSBHostInterface, id 0x100000536, registered, matched, active, busy 0 (3 ms), retain 10>
+  |   | +-o VDCAssistant  <class AppleUSBHostInterfaceUserClient, id 0x100000838, !registered, !matched, active, busy 0, retain 6>
+  |   +-o VDCAssistant  <class AppleUSBHostDeviceUserClient, id 0x100000836, !registered, !matched, active, busy 0, retain 6>
+  +-o AppleUSBVHCIPort@80300000  <class AppleUSBVHCIPort, id 0x1000004cc, registered, matched, active, busy 0 (781 ms), retain 13>
+  | +-o Ambient Light Sensor@80300000  <class IOUSBHostDevice, id 0x100000506, registered, matched, active, busy 0 (781 ms), retain 25>
+  |   +-o AppleUSBHostLegacyClient  <class AppleUSBHostLegacyClient, id 0x10000051d, !registered, !matched, active, busy 0, retain 8>
+  |   +-o AppleUSBHostCompositeDevice  <class AppleUSBHostCompositeDevice, id 0x100000530, !registered, !matched, active, busy 0, retain 4>
+  |   +-o HID Relay@0  <class IOUSBHostInterface, id 0x100000532, registered, matched, active, busy 0 (654 ms), retain 12>
+  |     +-o AppleUserUSBHostHIDDevice  <class AppleUserHIDDevice, id 0x10000061b, registered, matched, active, busy 0 (7 ms), retain 14>
+  |       +-o IOHIDInterface  <class IOHIDInterface, id 0x1000006b2, registered, matched, active, busy 0 (6 ms), retain 7>
+  |       | +-o AppleUSBALSService  <class AppleUSBALSService, id 0x1000006b7, registered, matched, active, busy 0 (1 ms), retain 5>
+  |       +-o IOHIDLibUserClient  <class IOHIDLibUserClient, id 0x100000708, !registered, !matched, active, busy 0, retain 6>
+  +-o AppleUSBVHCIPort@80400000  <class AppleUSBVHCIPort, id 0x1000004cd, registered, matched, active, busy 0 (837 ms), retain 13>
+  | +-o Headset@80400000  <class IOUSBHostDevice, id 0x100000502, registered, matched, active, busy 0 (837 ms), retain 25>
+  |   +-o AppleUSBHostLegacyClient  <class AppleUSBHostLegacyClient, id 0x100000519, !registered, !matched, active, busy 0, retain 8>
+  |   +-o AppleUSBHostCompositeDevice  <class AppleUSBHostCompositeDevice, id 0x10000052d, !registered, !matched, active, busy 0, retain 4>
+  |   +-o HID Relay@0  <class IOUSBHostInterface, id 0x100000531, registered, matched, active, busy 0 (690 ms), retain 12>
+  |     +-o AppleUserUSBHostHIDDevice  <class AppleUserHIDDevice, id 0x10000061d, registered, matched, active, busy 0 (35 ms), retain 12>
+  |       +-o IOHIDInterface  <class IOHIDInterface, id 0x1000006c1, registered, matched, active, busy 0 (34 ms), retain 10>
+  |         +-o AppleUserHIDEventDriver  <class AppleUserHIDEventService, id 0x1000006d8, registered, matched, active, busy 0 (0 ms), retain 11>
+  |           +-o IOHIDEventServiceUserClient  <class IOHIDEventServiceUserClient, id 0x10000070e, !registered, !matched, active, busy 0, retain 6>
+  +-o AppleUSBVHCIPort@80500000  <class AppleUSBVHCIPort, id 0x1000004ce, registered, matched, active, busy 0 (871 ms), retain 13>
+  | +-o Apple Internal Keyboard / Trackpad@80500000  <class IOUSBHostDevice, id 0x100000504, registered, matched, active, busy 0 (871 ms), retain 41>
+  |   +-o AppleUSBHostLegacyClient  <class AppleUSBHostLegacyClient, id 0x10000053d, !registered, !matched, active, busy 0, retain 8>
+  |   +-o AppleUSBHostCompositeDevice  <class AppleUSBHostCompositeDevice, id 0x10000054d, !registered, !matched, active, busy 0, retain 4>
+  |   +-o HID Relay@0  <class IOUSBHostInterface, id 0x10000054f, registered, matched, active, busy 0 (717 ms), retain 12>
+  |   | +-o AppleUserUSBHostHIDDevice  <class AppleUserHIDDevice, id 0x10000063e, registered, matched, active, busy 0 (61 ms), retain 11>
+  |   |   +-o IOHIDInterface  <class IOHIDInterface, id 0x1000006c5, registered, matched, active, busy 0 (60 ms), retain 8>
+  |   |     +-o AppleDeviceManagementHIDEventService  <class AppleDeviceManagementHIDEventService, id 0x1000006d7, registered, matched, active, busy 0 (0 ms), retain 9>
+  |   |       +-o IOHIDEventServiceUserClient  <class IOHIDEventServiceUserClient, id 0x10000070a, !registered, !matched, active, busy 0, retain 6>
+  |   +-o HID Relay@1  <class IOUSBHostInterface, id 0x100000552, registered, matched, active, busy 0 (727 ms), retain 12>
+  |   | +-o AppleUserUSBHostHIDDevice  <class AppleUserHIDDevice, id 0x100000653, registered, matched, active, busy 0 (68 ms), retain 18>
+  |   |   +-o IOHIDInterface  <class IOHIDInterface, id 0x1000006d0, registered, matched, active, busy 0 (64 ms), retain 9>
+  |   |   | +-o AppleHIDKeyboardEventDriverV2  <class AppleHIDKeyboardEventDriverV2, id 0x1000006e1, registered, matched, active, busy 0 (0 ms), retain 8>
+  |   |   |   +-o IOHIDEventServiceUserClient  <class IOHIDEventServiceUserClient, id 0x10000070c, !registered, !matched, active, busy 0, retain 6>
+  |   |   +-o IOHIDLibUserClient  <class IOHIDLibUserClient, id 0x1000006f0, !registered, !matched, active, busy 0, retain 6>
+  |   |   +-o IOHIDLibUserClient  <class IOHIDLibUserClient, id 0x1000007c6, !registered, !matched, active, busy 0, retain 6>
+  |   |   +-o IOHIDLibUserClient  <class IOHIDLibUserClient, id 0x1000009be, !registered, !matched, active, busy 0, retain 6>
+  |   +-o HID Relay@2  <class IOUSBHostInterface, id 0x10000055d, registered, matched, active, busy 0 (701 ms), retain 12>
+  |   | +-o AppleUserUSBHostHIDDevice  <class AppleUserHIDDevice, id 0x10000061f, registered, matched, active, busy 0 (41 ms), retain 16>
+  |   |   +-o IOHIDInterface  <class IOHIDInterface, id 0x1000006d3, registered, matched, active, busy 0 (38 ms), retain 8>
+  |   |   | +-o AppleMultitouchTrackpadHIDEventDriver  <class AppleMultitouchTrackpadHIDEventDriver, id 0x1000006da, registered, matched, active, busy 0 (0 ms), retain 8>
+  |   |   |   +-o AppleMultitouchDevice  <class AppleMultitouchDevice, id 0x1000006ed, registered, matched, active, busy 0 (0 ms), retain 8>
+  |   |   |     +-o AppleMultitouchDeviceUserClient  <class AppleMultitouchDeviceUserClient, id 0x100000704, !registered, !matched, active, busy 0, retain 6>
+  |   |   +-o IOHIDLibUserClient  <class IOHIDLibUserClient, id 0x1000006f1, !registered, !matched, active, busy 0, retain 6>
+  |   |   +-o IOHIDLibUserClient  <class IOHIDLibUserClient, id 0x1000009bf, !registered, !matched, active, busy 0, retain 5>
+  |   +-o HID Relay@3  <class IOUSBHostInterface, id 0x100000564, registered, matched, active, busy 0 (678 ms), retain 12>
+  |   | +-o AppleUserUSBHostHIDDevice  <class AppleUserHIDDevice, id 0x100000647, registered, matched, active, busy 0 (22 ms), retain 12>
+  |   |   +-o IOHIDInterface  <class IOHIDInterface, id 0x1000006ca, registered, matched, active, busy 0 (20 ms), retain 7>
+  |   |     +-o AppleActuatorHIDEventDriver  <class AppleActuatorHIDEventDriver, id 0x1000006d5, !registered, !matched, active, busy 0 (0 ms), retain 6>
+  |   |       +-o AppleActuatorDevice  <class AppleActuatorDevice, id 0x1000006d6, registered, matched, active, busy 0 (0 ms), retain 9>
+  |   |         +-o AppleActuatorDeviceUserClient  <class AppleActuatorDeviceUserClient, id 0x100000705, !registered, !matched, active, busy 0, retain 6>
+  |   +-o HID Relay@4  <class IOUSBHostInterface, id 0x10000056b, registered, matched, active, busy 0 (672 ms), retain 12>
+  |     +-o AppleUserUSBHostHIDDevice  <class AppleUserHIDDevice, id 0x10000064f, registered, matched, active, busy 0 (14 ms), retain 11>
+  |       +-o IOHIDInterface  <class IOHIDInterface, id 0x1000006cd, registered, matched, active, busy 0 (12 ms), retain 6>
+  +-o AppleUSBVHCIPort@80600000  <class AppleUSBVHCIPort, id 0x1000004cf, registered, matched, active, busy 0 (821 ms), retain 13>
+  | +-o Touch Bar Display@80600000  <class IOUSBHostDevice, id 0x1000004ff, registered, matched, active, busy 0 (821 ms), retain 31>
+  |   +-o AppleUSBHostLegacyClient  <class AppleUSBHostLegacyClient, id 0x100000539, !registered, !matched, active, busy 0, retain 8>
+  |   +-o AppleUSBHostCompositeDevice  <class AppleUSBHostCompositeDevice, id 0x10000054b, !registered, !matched, active, busy 0, retain 4>
+  |   +-o HID Relay@0  <class IOUSBHostInterface, id 0x100000553, registered, matched, active, busy 0 (694 ms), retain 12>
+  |   | +-o AppleUserUSBHostHIDDevice  <class AppleUserHIDDevice, id 0x10000064d, registered, matched, active, busy 0 (39 ms), retain 12>
+  |   |   +-o IOHIDInterface  <class IOHIDInterface, id 0x1000006c6, registered, matched, active, busy 0 (37 ms), retain 10>
+  |   |     +-o AppleUserHIDEventDriver  <class AppleUserHIDEventService, id 0x1000006db, registered, matched, active, busy 0 (0 ms), retain 11>
+  |   |       +-o IOHIDEventServiceUserClient  <class IOHIDEventServiceUserClient, id 0x10000070d, !registered, !matched, active, busy 0, retain 6>
+  |   +-o IOUSBHostInterface@1  <class IOUSBHostInterface, id 0x100000561, registered, matched, active, busy 0 (1 ms), retain 12>
+  |     +-o TouchBarServer  <class AppleUSBHostInterfaceUserClient, id 0x1000007a7, !registered, !matched, active, busy 0, retain 6>
+  +-o AppleUSBVHCIPort@80700000  <class AppleUSBVHCIPort, id 0x1000004d0, registered, matched, active, busy 0 (822 ms), retain 13>
+  | +-o Touch Bar Backlight@80700000  <class IOUSBHostDevice, id 0x1000004f9, registered, matched, active, busy 0 (822 ms), retain 29>
+  |   +-o AppleUSBHostLegacyClient  <class AppleUSBHostLegacyClient, id 0x100000510, !registered, !matched, active, busy 0, retain 8>
+  |   +-o AppleUSBHostCompositeDevice  <class AppleUSBHostCompositeDevice, id 0x10000052c, !registered, !matched, active, busy 0, retain 4>
+  |   +-o HID Relay@0  <class IOUSBHostInterface, id 0x100000535, registered, matched, active, busy 0 (678 ms), retain 12>
+  |   | +-o AppleUserUSBHostHIDDevice  <class AppleUserHIDDevice, id 0x10000064a, registered, matched, active, busy 0 (23 ms), retain 14>
+  |   |   +-o IOHIDInterface  <class IOHIDInterface, id 0x1000006c4, registered, matched, active, busy 0 (22 ms), retain 7>
+  |   |   | +-o AppleUSBALSService  <class AppleUSBALSService, id 0x1000006d4, registered, matched, active, busy 0 (0 ms), retain 5>
+  |   |   +-o IOHIDLibUserClient  <class IOHIDLibUserClient, id 0x100000707, !registered, !matched, active, busy 0, retain 6>
+  |   +-o HID Relay@1  <class IOUSBHostInterface, id 0x100000550, registered, matched, active, busy 0 (658 ms), retain 12>
+  |     +-o AppleUserUSBHostHIDDevice  <class AppleUserHIDDevice, id 0x100000611, registered, matched, active, busy 0 (6 ms), retain 14>
+  |       +-o IOHIDInterface  <class IOHIDInterface, id 0x1000006b8, registered, matched, active, busy 0 (4 ms), retain 6>
+  |       +-o IOHIDLibUserClient  <class IOHIDLibUserClient, id 0x1000007b0, !registered, !matched, active, busy 0, retain 6>
+  +-o AppleUSBVHCIPort@80800000  <class AppleUSBVHCIPort, id 0x1000004d1, registered, matched, active, busy 0 (798 ms), retain 13>
+  | +-o IOUSBHostDevice@80800000  <class IOUSBHostDevice, id 0x100000509, registered, matched, active, busy 0 (798 ms), retain 28>
+  |   +-o AppleUSBHostLegacyClient  <class AppleUSBHostLegacyClient, id 0x100000514, !registered, !matched, active, busy 0, retain 8>
+  |   +-o AppleUSBHostCompositeDevice  <class AppleUSBHostCompositeDevice, id 0x10000052e, !registered, !matched, active, busy 0, retain 4>
+  |   +-o HID Relay@0  <class IOUSBHostInterface, id 0x100000534, registered, matched, active, busy 0 (654 ms), retain 12>
+  |   | +-o AppleUserUSBHostHIDDevice  <class AppleUserHIDDevice, id 0x100000649, registered, matched, active, busy 0 (7 ms), retain 11>
+  |   |   +-o IOHIDInterface  <class IOHIDInterface, id 0x1000006b3, registered, matched, active, busy 0 (6 ms), retain 8>
+  |   |     +-o IOHIDEventDriver  <class IOHIDEventDriver, id 0x1000006b4, registered, matched, active, busy 0 (0 ms), retain 8>
+  |   |       +-o IOHIDEventServiceUserClient  <class IOHIDEventServiceUserClient, id 0x10000070f, !registered, !matched, active, busy 0, retain 6>
+  |   +-o Google Chrome  <class AppleUSBHostDeviceUserClient, id 0x100000941, !registered, !matched, active, busy 0, retain 7>
+  +-o AppleUSBVHCIPort@80900000  <class AppleUSBVHCIPort, id 0x1000004d2, registered, matched, active, busy 0 (0 ms), retain 9>
+  +-o AppleUSBVHCIPort@80a00000  <class AppleUSBVHCIPort, id 0x1000004d3, registered, matched, active, busy 0 (0 ms), retain 9>
+  +-o AppleUSBVHCIPort@80b00000  <class AppleUSBVHCIPort, id 0x1000004d4, registered, matched, active, busy 0 (0 ms), retain 9>
+  +-o AppleUSBVHCIPort@80c00000  <class AppleUSBVHCIPort, id 0x1000004d5, registered, matched, active, busy 0 (0 ms), retain 9>
+
